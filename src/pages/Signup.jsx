@@ -42,7 +42,7 @@ const SignUp = () => {
     };
 
     return (
-        <div className="min-h-dvh bg-gradient-to-br from-[#4b1515] via-[#260b0b] to-[#170404] text-white">
+        <div className="min-h-dvh w-full bg-gradient-to-br from-[#4b1515] via-[#260b0b] to-[#170404] text-white">
             {/* Header */}
             <div className="border-b border-[#4a282a]">
                 <Layout>
@@ -57,7 +57,7 @@ const SignUp = () => {
             </div>
 
             {/* Main */}
-            <div className="min-h-screen text-white">
+            <div className="text-white">
                 <div
                     className="
             mx-auto
