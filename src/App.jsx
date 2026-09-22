@@ -29,38 +29,6 @@ import Account from "./pages/Account";
 const App = () => {
   return (
     <>
-      {/*     
-      <Topbanner />
-      <Hero />
-      <Trending />
-      <Features />
-      <FAQ />
-      <Footer />
-      <SignIn /> */}
-      {/* <div className="relative">
-        <HomeHeader />
-        <HomeHero />
-      </div>
-      <main className="bg-black">
-        <MovieRowApi title="Trending Now" endpoint="trending/movie/week" />
-
-        <MovieRowApi title="Top Rated" endpoint="movie/top_rated" />
-
-        <MovieRowApi
-          title="Action Movies"
-          endpoint="discover/movie?with_genres=28"
-        />
-
-        <MovieRowApi title="Comedy" endpoint="discover/movie?with_genres=35" />
-
-        <MovieRowApi title="Horror" endpoint="discover/movie?with_genres=27" />
-
-        <MovieRowApi
-          title="Romance"
-          endpoint="discover/movie?with_genres=10749"
-        />
-      </main>
-      <Footer /> */}
 
       <Routes>
         <Route path="/" element={<LandingPage />} />

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import HomeLayout from "../HomeLayout";
 
 const MovieRow = ({ title, movies = [] }) => {
@@ -94,11 +95,10 @@ const MovieRow = ({ title, movies = [] }) => {
               />
 
               {/* Play Button */}
-              <button
+              <Link
+              to={`/movies/${movie.id}`}
                 type="button"
-                onClick={() =>
-                  (window.location.href = `/movies/${movie.id}`)
-                }
+               
                 className="
                   absolute
                   left-1/2
@@ -144,7 +144,7 @@ const MovieRow = ({ title, movies = [] }) => {
                     md:border-l-18
                   "
                 />
-              </button>
+              </Link>
 
               {/* Bottom Gradient */}
               <div
