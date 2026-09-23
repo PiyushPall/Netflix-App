@@ -76,8 +76,16 @@ const HomeHeader = () => {
 
             {/* Desktop Navigation */}
             <nav
-              className={`${searchOpen ? "hidden" : "hidden lg:flex"
-                } items-center gap-5 text-[14px] font-medium text-[#d2d2d2] lg:gap-7 lg:text-[15px]`}
+              className={`
+    ${searchOpen ? "hidden lg:flex" : "hidden lg:flex"}
+    items-center
+    gap-5
+    text-[14px]
+    font-medium
+    text-[#d2d2d2]
+    lg:gap-7
+    lg:text-[15px]
+  `}
             >
 
               <NavLink
@@ -191,15 +199,27 @@ const HomeHeader = () => {
               {searchOpen && searchQuery.trim() && (
                 <div
                   className="
-                absolute right-0 top-12 z-[70]
-                w-[calc(100vw-32px)]
-                max-w-[400px]
-                overflow-hidden
-                rounded-md
-                border border-white/10
-                bg-[#181818]
-                shadow-2xl
-              "
+      fixed
+      left-1/2
+      top-20
+      z-[70]
+      w-[calc(100vw-32px)]
+      max-w-[400px]
+      -translate-x-1/2
+      overflow-hidden
+      rounded-md
+      border
+      border-white/10
+      bg-[#181818]
+      shadow-2xl
+
+      lg:absolute
+      lg:left-auto
+      lg:right-0
+      lg:top-12
+      lg:w-[400px]
+      lg:translate-x-0
+    "
                 >
                   {searchLoading && (
                     <div className="px-5 py-4 text-sm text-gray-400">

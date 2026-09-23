@@ -68,7 +68,7 @@ const SignUp = () => {
             items-center
             px-4
             pt-6
-            sm:px-6
+            sm:px-8
             sm:pt-8
             md:px-8
             md:pt-10

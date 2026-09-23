@@ -40,33 +40,43 @@ const Footer = () => {
             {/* Button */}
             <button
               className="
-                flex
-                h-14
-                w-full
-                items-center
-                justify-center
-                gap-2
-                rounded-sm
-                bg-[#e50914]
-                px-5
-                text-[16px]
-                font-bold
-                text-white
-                transition
-                duration-200
-                hover:bg-[#c11119]
-                sm:w-[250px]
-                sm:text-[20px]
-                lg:w-[273px]
-                lg:text-[24px]
-              "
+    relative
+    flex
+    h-14
+    w-full
+    items-center
+    rounded-sm
+    bg-[#e50914]
+    px-5
+    text-white
+    transition
+    duration-200
+    hover:bg-[#c11119]
+    sm:w-[250px]
+    lg:w-[273px]
+  "
             >
-              <span>Try 7 Days for ₹0</span>
+              <span
+                className="
+      whitespace-nowrap
+      text-[18px]
+      font-bold
+      sm:text-[20px]
+      lg:text-[24px]
+    "
+              >
+                Try 7 Days for ₹0
+              </span>
 
               <ChevronRight
-                size={28}
-                strokeWidth={2}
-                className="shrink-0"
+                size={30}
+                strokeWidth={2.5}
+                className="
+      absolute
+      right-4
+      shrink-0
+      sm:right-5
+    "
               />
             </button>
           </div>

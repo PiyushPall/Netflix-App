@@ -162,7 +162,7 @@ const MyList = () => {
               >
                 {/* Poster */}
 
-                <Link to={`/movie/${movie.id}`}>
+                <Link to={`/movies/${movie.id}`}>
                   <div className="aspect-[2/3] overflow-hidden">
                     <img
                       src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
@@ -237,20 +237,21 @@ const MyList = () => {
 
                 <div
                   className="
-                    absolute
-                    right-0
-                    bottom-0
-                    left-0
-                    z-10
-                    translate-y-3
-                    p-2
-                    opacity-0
-                    transition-all
-                    duration-300
-                    group-hover:translate-y-0
-                    group-hover:opacity-100
-                    sm:p-3
-                  "
+    absolute
+    right-0
+    bottom-0
+    left-0
+    z-10
+    p-2
+    opacity-100
+    transition-all
+    duration-300
+    sm:translate-y-3
+    sm:opacity-0
+    sm:p-3
+    sm:group-hover:translate-y-0
+    sm:group-hover:opacity-100
+  "
                 >
                   <h3
                     className="
