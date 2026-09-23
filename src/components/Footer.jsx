@@ -49,7 +49,7 @@ const Footer = () => {
                 rounded-sm
                 bg-[#e50914]
                 px-5
-                text-[18px]
+                text-[16px]
                 font-bold
                 text-white
                 transition
