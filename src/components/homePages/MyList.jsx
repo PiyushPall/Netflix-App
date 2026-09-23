@@ -9,6 +9,7 @@ import {
 
 const MyList = () => {
   const [myList, setMyList] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
   useEffect(() => {
     setMyList(getMyList());
@@ -148,17 +149,19 @@ const MyList = () => {
             {myList.map((movie) => (
               <div
                 key={movie.id}
+                onClick={() => setSelectedMovie(movie)}
                 className="
-                  group
-                  relative
-                  overflow-hidden
-                  rounded-md
-                  bg-[#181818]
-                  transition-all
-                  duration-300
-                  hover:z-20
-                  hover:scale-105
-                "
+    group
+    relative
+    cursor-pointer
+    overflow-hidden
+    rounded-md
+    bg-[#181818]
+    transition-all
+    duration-300
+    hover:z-20
+    hover:scale-105
+  "
               >
                 {/* Poster */}
 
@@ -178,6 +181,72 @@ const MyList = () => {
                     />
                   </div>
                 </Link>
+
+                {/* Mobile Actions */}
+
+                {selectedMovie?.id === movie.id && (
+                  <div
+                    onClick={(e) => e.stopPropagation()}
+                    className="
+      absolute
+      inset-x-3
+      bottom-3
+      z-30
+      flex
+      gap-2
+      sm:hidden
+    "
+                  >
+                    {/* Play */}
+                    <Link
+                      to={`/movies/${movie.id}`}
+                      onClick={() => setSelectedMovie(null)}
+                      className="
+        flex
+        flex-1
+        items-center
+        justify-center
+        gap-2
+        rounded-md
+        bg-white
+        px-3
+        py-2
+        text-sm
+        font-semibold
+        text-black
+      "
+                    >
+                      <Play size={16} fill="currentColor" />
+                      Play
+                    </Link>
+
+                    {/* Remove */}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        handleRemove(movie.id);
+                        setSelectedMovie(null);
+                      }}
+                      className="
+        flex
+        flex-1
+        items-center
+        justify-center
+        gap-2
+        rounded-md
+        bg-[#333]
+        px-3
+        py-2
+        text-sm
+        font-semibold
+        text-white
+      "
+                    >
+                      <X size={16} />
+                      Remove
+                    </button>
+                  </div>
+                )}
 
                 {/* Hover Overlay */}
 
@@ -203,27 +272,10 @@ const MyList = () => {
                   type="button"
                   onClick={() => handleRemove(movie.id)}
                   className="
-                    absolute
-                    top-2
-                    right-2
-                    z-10
-                    flex
-                    h-7
-                    w-7
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-black/70
-                    text-white
-                    opacity-0
-                    transition
-                    group-hover:opacity-100
-                    hover:bg-white
-                    hover:text-black
-                    sm:top-3
-                    sm:right-3
-                    sm:h-8
-                    sm:w-8
+                     absolute top-2 right-2 z-10 flex h-7 w-7 items-center justify-center
+  rounded-full bg-black/70 text-white transition
+  hover:bg-white hover:text-black
+  sm:top-3 sm:right-3 sm:h-8 sm:w-8
                   "
                   title="Remove from My List"
                 >
@@ -237,20 +289,12 @@ const MyList = () => {
 
                 <div
                   className="
-    absolute
-    right-0
-    bottom-0
-    left-0
-    z-10
-    p-2
-    opacity-100
-    transition-all
-    duration-300
-    sm:translate-y-3
-    sm:opacity-0
-    sm:p-3
-    sm:group-hover:translate-y-0
-    sm:group-hover:opacity-100
+   absolute right-0 bottom-0 left-0 z-10 p-2
+  sm:translate-y-3 sm:opacity-0
+  sm:transition-all sm:duration-300
+  sm:group-hover:translate-y-0
+  sm:group-hover:opacity-100
+  sm:p-3  
   "
                 >
                   <h3
@@ -271,18 +315,10 @@ const MyList = () => {
                     <Link
                       to={`/movies/${movie.id}`}
                       className="
-                        flex
-                        h-7
-                        w-7
-                        items-center
-                        justify-center
-                        rounded-full
-                        bg-white
-                        text-black
-                        transition
-                        hover:scale-110
-                        sm:h-8
-                        sm:w-8
+                        flex h-8 w-8 items-center justify-center
+  rounded-full bg-white text-black
+  transition hover:scale-110
+  sm:h-8 sm:w-8
                       "
                       title="Play"
                     >
