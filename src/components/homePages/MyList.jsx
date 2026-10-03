@@ -2,10 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Play, X } from "lucide-react";
 import HomeLayout from "../HomeLayout";
-import {
-  getMyList,
-  removeFromMyList,
-} from "../Utils/mylist";
+import { getMyList, removeFromMyList } from "../Utils/mylist";
 
 const MyList = () => {
   const [myList, setMyList] = useState([]);
@@ -18,9 +15,7 @@ const MyList = () => {
   const handleRemove = (movieId) => {
     removeFromMyList(movieId);
 
-    setMyList((prev) =>
-      prev.filter((movie) => movie.id !== movieId),
-    );
+    setMyList((prev) => prev.filter((movie) => movie.id !== movieId));
   };
 
   return (
@@ -279,10 +274,7 @@ const MyList = () => {
                   "
                   title="Remove from My List"
                 >
-                  <X
-                    size={15}
-                    className="sm:h-[17px] sm:w-[17px]"
-                  />
+                  <X size={15} className="sm:h-[17px] sm:w-[17px]" />
                 </button>
 
                 {/* Bottom Content */}
