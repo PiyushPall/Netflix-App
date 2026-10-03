@@ -16,12 +16,13 @@
   <img src="https://img.shields.io/badge/MongoDB-Database-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/>
 </p>
 
-🚀 Live Demo
+## 🚀 Live Demo
 
-🔗 View Live Project
+🔗 **[View Live Project](https://netflix-app-amber.vercel.app)**
 
-netflix-app-amber.vercel.app
+## 🚀 Live Demo
 
+👉 **Experience it here:** 🔗 [View Live Project](https://netflix-app-amber.vercel.app)
 📌 About
 
 This project is a Netflix-inspired movie and TV streaming interface created to practice and demonstrate real-world frontend and backend development.
